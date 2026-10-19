@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="it" class="scroll-smooth overflow-x-hidden">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>I nostri premi | Il Giglio — Firenze</title>
+    
+    <!-- Meta per Smartphone & iOS WebApp -->
+    <meta name="theme-color" content="#0D2416">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        florence: {
+                            gold: '#C59B3F',
+                            goldLight: '#E5C97A',
+                            goldDark: '#8F6B20',
+                            goldPale: '#F8F1DD',
+                            green: '#0D2416',
+                            greenDark: '#08170D',
+                            greenOlive: '#294326',
+                            greenLeaf: '#4C6938',
+                            wine: '#6B1624',
+                            parchment: '#FBF7EE',
+                            parchmentDark: '#F3EAD5',
+                            borderGold: '#D4AF37'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'Georgia', 'serif'],
+                        cinzel: ['"Cinzel"', 'serif'],
+                        body: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        cormorant: ['"Cormorant Garamond"', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #F8F3E6;
+            color: #1A2215;
+            background-image: radial-gradient(#d8ccb0 0.75px, transparent 0.75px);
+            background-size: 14px 14px;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .label-frame {
+            border: 4px solid #0D2416;
+            box-shadow: 
+                inset 0 0 0 2px #FBF7EE,
+                inset 0 0 0 4px #C59B3F,
+                inset 0 0 0 6px #FBF7EE,
+                0 15px 35px -10px rgba(13, 39, 22, 0.25);
+            border-radius: 20px;
+        }
+
+        .paper-bg {
+            background-color: #FAF4E5;
+            background-image: 
+                radial-gradient(ellipse at top, rgba(255,255,255,0.7), transparent 70%),
+                radial-gradient(ellipse at bottom, rgba(212,175,55,0.08), transparent 75%);
+        }
+
+        .gold-divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #C59B3F;
+        }
+        .gold-divider::before,
+        .gold-divider::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid #C59B3F;
+        }
+        .gold-divider:not(:empty)::before {
+            margin-right: 1.2em;
+        }
+        .gold-divider:not(:empty)::after {
+            margin-left: 1.2em;
+        }
+
+        .glass-nav {
+            background: rgba(250, 244, 229, 0.98);
+            -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(12px);
+            border-bottom: 2px solid #C59B3F;
+        }
+
+        /* Nascondi scrollbar orizzontale su smartphone mantenendo lo scorrimento fluido */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>.language-bar{display:flex;justify-content:flex-end;padding:5px max(16px,calc((100vw - 1216px)/2));background:#0d2416;color:#e5c97a}.language-bar nav{display:flex;align-items:center;gap:10px;font-size:12px;line-height:20px}.language-bar button{cursor:pointer;color:#e8e2d2;background:none;border:0;padding:2px 3px;white-space:nowrap}.language-bar button[aria-pressed="true"]{color:#e5c97a;text-decoration:underline;text-underline-offset:4px;font-weight:700}.language-bar button:focus-visible{outline:2px solid #e5c97a;outline-offset:2px}section[id]{scroll-margin-top:145px}@media(max-width:600px){.language-bar{justify-content:center}.language-bar nav{font-size:12px}section[id]{scroll-margin-top:120px}}</style>
+<style>.back-home{display:inline-block;margin-bottom:26px;color:#75603d;text-decoration:underline;text-underline-offset:4px;font-size:14px}</style></head>
+<body class="selection:bg-florence-gold selection:text-florence-green overflow-x-hidden w-full relative">
+
+    <!-- SVG Defs condivisi per la resa ottimale di tutte le medaglie delle coccarde -->
+    <svg class="hidden" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <linearGradient id="podioGoldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#E9D18D" />
+                <stop offset="50%" stop-color="#C59B3F" />
+                <stop offset="100%" stop-color="#8F6B20" />
+            </linearGradient>
+            <linearGradient id="podioGreenGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#143620" />
+                <stop offset="100%" stop-color="#08170D" />
+            </linearGradient>
+            <path id="podioTextPathTop" d="M 50,150 A 100,100 0 1,1 250,150" fill="none" />
+            <path id="podioTextPathBottom" d="M 250,150 A 100,100 0 0,1 50,150" fill="none" />
+            <path id="podioRibbonArc" d="M 65,240 Q 150,295 235,240" fill="none" />
+
+            <!-- Modello base coccarda condiviso per massima nitidezza e leggerezza -->
+            <g id="medalRosetteBase">
+                <!-- Tails -->
+                <g fill="#0D2416" stroke="#C59B3F" stroke-width="2.5">
+                    <path d="M 85,200 L 50,340 L 95,355 L 125,240 Z" />
+                    <path d="M 68,220 L 45,340 L 70,348 L 92,235 Z" fill="url(#podioGoldGrad)" />
+                    <path d="M 98,220 L 78,350 L 88,353 L 108,235 Z" fill="#0D2416" />
+                    <path d="M 215,200 L 250,340 L 205,355 L 175,240 Z" />
+                    <path d="M 232,220 L 255,340 L 230,348 L 208,235 Z" fill="url(#podioGoldGrad)" />
+                    <path d="M 202,220 L 222,350 L 212,353 L 192,235 Z" fill="#0D2416" />
+                </g>
+                <!-- Outer Rosette Petals -->
+                <g transform="translate(150,150)" fill="#0D2416" stroke="#C59B3F" stroke-width="2">
+                    <path d="M 0,-146 L 14,-125 L -14,-125 Z" />
+                    <path d="M 0,-146 L 14,-125 L -14,-125 Z" transform="rotate(15)" />
+                    <path d="M 0,-146 L 14,-125 L -14,-125 Z" transform="rotate(30)" />
+                    <path d="M 0,-146 L 14,-125 L -14,-125 Z" transform="rotate(45)" />
+                    <path d="M 0,-146 L 14,-125 L -14,-125 Z" transform="rotate(60)" />
+                    <path d="M 0,-146 L 14,-125 L -14,-125 Z" transform="rotate(75)" />
+                    <path d="M 0,-146 L 14,-125 L -14,-125 Z" transform="rotate(90)" />
+                    <path d="M 0,-146 L 14,-125 L -14,-125 Z" transform="rotate(105)" />
+                    <path d="M 0,-146 L 14,-125 L -14,-125 Z" transform="rotate(120)" />
+                    <path d="M 0,-146 L 14,-125 L -14,-125 Z" transform="rotate(135)" />
+                    <path d="M 0,-146 L 14,-125 L -14,-125 Z" transform="rotate(150)" />
+                    <path d="M 0,-146 L 14,-125 L -14,-125 Z" transform="rotate(165)" />
+                    <path d="M 0,-146 L 14,-125 L -14,-125 Z" transform="rotate(180)" />
+                    <path d="M 0,-146 L 14,-125 L -14,-125 Z" transform="rotate(195)" />
+                    <path d="M 0,-146 L 14,-125 L -14,-125 Z" transform="rotate(210)" />
+                    <path d="M 0,-146 L 14,-125 L -14,-125 Z" transform="rotate(225)" />
+                    <path d="M 0,-146 L 14,-125 L -14,-125 Z" transform="rotate(240)" />
+                    <path d="M 0,-146 L 14,-125 L -14,-125 Z" transform="rotate(255)" />
+                    <path d="M 0,-146 L 14,-125 L -14,-125 Z" transform="rotate(240)" />
+                    <path d="M 0,-146 L 14,-125 L -14,-125 Z" transform="rotate(285)" />
+                    <path d="M 0,-146 L 14,-125 L -14,-125 Z" transform="rotate(300)" />
+                    <path d="M 0,-146 L 14,-125 L -14,-125 Z" transform="rotate(315)" />
+                    <path d="M 0,-146 L 14,-125 L -14,-125 Z" transform="rotate(330)" />
+                    <path d="M 0,-146 L 14,-125 L -14,-125 Z" transform="rotate(345)" />
+                </g>
+                <!-- Concentric Circles -->
+                <circle cx="150" cy="150" r="118" fill="url(#podioGreenGrad)" stroke="#C59B3F" stroke-width="3.5" />
+                <circle cx="150" cy="150" r="82" fill="#FAF4E5" stroke="#C59B3F" stroke-width="3" />
+                <!-- Circular Text -->
+                <text font-family="'Cinzel', serif" font-size="11" font-weight="800" fill="#E9D18D" letter-spacing="1.2">
+                    <textPath href="index.html#podioTextPathTop" startOffset="50%" text-anchor="middle">CONCORSO FRANTOIO IL MANDORLO</textPath>
+                </text>
+                <text font-family="'Cinzel', serif" font-size="11" font-weight="800" fill="#E9D18D" letter-spacing="1">
+                    <textPath href="index.html#podioTextPathBottom" startOffset="50%" text-anchor="middle">IN MEMORIA DI LINO LONARI</textPath>
+                </text>
+                <text x="44" y="153" font-size="11" fill="#C59B3F">★</text>
+                <text x="246" y="153" font-size="11" fill="#C59B3F">★</text>
+                <!-- Laurel Branches -->
+                <g fill="#C59B3F" stroke="#8F6B20" stroke-width="0.8">
+                    <ellipse cx="106" cy="130" rx="9" ry="4" transform="rotate(-40 106 130)" />
+                    <ellipse cx="102" cy="150" rx="9" ry="4" transform="rotate(-20 102 150)" />
+                    <ellipse cx="106" cy="170" rx="9" ry="4" transform="rotate(5 106 170)" />
+                    <ellipse cx="116" cy="188" rx="9" ry="4" transform="rotate(30 116 188)" />
+                    <ellipse cx="132" cy="202" rx="9" ry="4" transform="rotate(55 132 202)" />
+                    <ellipse cx="194" cy="130" rx="9" ry="4" transform="rotate(40 194 130)" />
+                    <ellipse cx="198" cy="150" rx="9" ry="4" transform="rotate(20 198 150)" />
+                    <ellipse cx="194" cy="170" rx="9" ry="4" transform="rotate(-5 194 170)" />
+                    <ellipse cx="184" cy="188" rx="9" ry="4" transform="rotate(-30 184 188)" />
+                    <ellipse cx="168" cy="202" rx="9" ry="4" transform="rotate(-55 168 202)" />
+                </g>
+                <!-- Ribbon "SUL PODIO" -->
+                <path d="M 55,260 Q 150,285 245,260 L 241,295 Q 150,320 59,295 Z" fill="url(#podioGoldGrad)" stroke="#8F6B20" stroke-width="2.2" />
+                <text font-family="'Cinzel', serif" font-size="16" font-weight="900" fill="#0D2416" letter-spacing="1.5">
+                    <textPath href="index.html#podioRibbonArc" startOffset="50%" text-anchor="middle">SUL PODIO</textPath>
+                </text>
+                <!-- Olives Bottom -->
+                <g transform="translate(150, 332)">
+                    <path d="M -30,-4 Q 0,6 30,-4" stroke="#8F6B20" stroke-width="1.8" fill="none" />
+                    <ellipse cx="-5" cy="2" rx="5" ry="7" fill="#143620" stroke="#C59B3F" stroke-width="1.2" transform="rotate(-10 -5 2)" />
+                    <ellipse cx="5" cy="2" rx="5" ry="7" fill="#143620" stroke="#C59B3F" stroke-width="1.2" transform="rotate(10 5 2)" />
+                </g>
+            </g>
+
+            <!-- RAMETTO D'OLIVO BOTANICO NATURALE E DELICATO -->
+            <g id="botanicalOliveBranch">
+                <!-- Rametto legnoso affusolato e naturale -->
+                <path d="M 195,10 C 175,65 155,115 130,170 C 105,220 70,255 20,285" fill="none" stroke="#594429" stroke-width="2.2" stroke-linecap="round" />
+                <path d="M 165,90 C 140,105 110,122 80,140" fill="none" stroke="#685133" stroke-width="1.6" stroke-linecap="round" />
+                <path d="M 130,170 C 115,200 90,225 60,250" fill="none" stroke="#685133" stroke-width="1.4" stroke-linecap="round" />
+                <path d="M 100,220 C 120,240 132,265 125,290" fill="none" stroke="#594429" stroke-width="1.3" stroke-linecap="round" />
+
+                <!-- Peduncoli fini delle olive -->
+                <path d="M 152,108 Q 140,125 136,138" fill="none" stroke="#685133" stroke-width="1.1" />
+                <path d="M 125,182 Q 138,198 145,212" fill="none" stroke="#685133" stroke-width="1.1" />
+                <path d="M 85,230 Q 75,248 70,262" fill="none" stroke="#685133" stroke-width="1" />
+                <path d="M 112,250 Q 118,268 116,280" fill="none" stroke="#685133" stroke-width="1" />
+
+                <!-- Foglie d'olivo sottili e naturali -->
+                <path d="M 195,15 C 175,12 155,25 142,42 C 160,38 182,30 195,15 Z" fill="#475C34" />
+                <path d="M 195,15 Q 166,28 142,42" stroke="#77915B" stroke-width="0.8" fill="none" />
+
+                <path d="M 190,25 C 205,45 208,68 202,88 C 194,68 188,48 190,25 Z" fill="#5A7342" />
+                <path d="M 190,25 Q 200,56 202,88" stroke="#8CA670" stroke-width="0.8" fill="none" />
+
+                <path d="M 175,60 C 145,55 120,70 102,90 C 125,85 155,75 175,60 Z" fill="#475C34" />
+                <path d="M 175,60 Q 136,73 102,90" stroke="#77915B" stroke-width="0.8" fill="none" />
+
+                <path d="M 160,80 C 170,105 172,130 162,150 C 158,125 152,102 160,80 Z" fill="#3D502C" />
+                <path d="M 160,80 Q 165,115 162,150" stroke="#6F8852" stroke-width="0.8" fill="none" />
+
+                <path d="M 130,105 C 105,98 80,110 65,126 C 85,122 110,115 130,105 Z" fill="#556E3F" />
+                <path d="M 130,105 Q 96,114 65,126" stroke="#87A16E" stroke-width="0.8" fill="none" />
+
+                <path d="M 95,130 C 70,125 48,138 35,155 C 55,150 78,142 95,130 Z" fill="#445731" />
+                <path d="M 95,130 Q 64,142 35,155" stroke="#748E59" stroke-width="0.8" fill="none" />
+
+                <path d="M 80,140 C 90,165 92,190 85,210 C 80,185 76,162 80,140 Z" fill="#587140" />
+                <path d="M 80,140 Q 86,175 85,210" stroke="#8BA470" stroke-width="0.8" fill="none" />
+
+                <path d="M 140,150 C 158,172 162,198 155,220 C 145,195 138,172 140,150 Z" fill="#445731" />
+                <path d="M 140,150 Q 152,185 155,220" stroke="#748E59" stroke-width="0.8" fill="none" />
+
+                <path d="M 125,185 C 98,180 72,195 55,215 C 78,210 105,200 125,185 Z" fill="#556E3F" />
+                <path d="M 125,185 Q 89,198 55,215" stroke="#87A16E" stroke-width="0.8" fill="none" />
+
+                <path d="M 85,215 C 60,212 36,225 22,245 C 42,240 68,230 85,215 Z" fill="#3D502C" />
+                <path d="M 85,215 Q 52,228 22,245" stroke="#6F8852" stroke-width="0.8" fill="none" />
+
+                <path d="M 60,250 C 35,250 15,265 5,285 C 25,280 48,268 60,250 Z" fill="#475C34" />
+                <path d="M 60,250 Q 32,265 5,285" stroke="#77915B" stroke-width="0.8" fill="none" />
+
+                <path d="M 110,240 C 130,258 138,280 135,300 C 124,280 115,260 110,240 Z" fill="#5A7342" />
+                <path d="M 110,240 Q 125,240 135,300" stroke="#8CA670" stroke-width="0.8" fill="none" />
+
+                <!-- Piccole olive con riflessi sottili -->
+                <g>
+                    <ellipse cx="136" cy="142" rx="9" ry="13" fill="url(#oliveGreenGrad)" transform="rotate(-15 136 142)" />
+                    <ellipse cx="133" cy="138" rx="2.2" ry="4.5" fill="#D3EAA2" opacity="0.65" transform="rotate(-20 133 138)" />
+                </g>
+                <g>
+                    <ellipse cx="147" cy="216" rx="9.5" ry="13.5" fill="url(#oliveBlackGrad)" transform="rotate(18 147 216)" />
+                    <ellipse cx="143" cy="211" rx="2.5" ry="4.8" fill="#C9A8D4" opacity="0.55" transform="rotate(12 143 211)" />
+                </g>
+                <g>
+                    <ellipse cx="68" cy="266" rx="8.5" ry="12.5" fill="url(#oliveGreenGrad)" transform="rotate(-22 68 266)" />
+                    <ellipse cx="65" cy="262" rx="2" ry="4.2" fill="#D3EAA2" opacity="0.6" transform="rotate(-28 65 262)" />
+                </g>
+                <g>
+                    <ellipse cx="116" cy="284" rx="8" ry="12" fill="url(#oliveBlackGrad)" transform="rotate(8 116 284)" />
+                    <ellipse cx="113" cy="249" rx="2.2" ry="4.2" fill="#C9A8D4" opacity="0.55" transform="rotate(4 113 249)" />
+                </g>
+            </g>
+
+            <!-- Gradienti sfumati per le olive -->
+            <linearGradient id="oliveGreenGrad" x1="20%" y1="10%" x2="90%" y2="90%">
+                <stop offset="0%" stop-color="#9BB44A" />
+                <stop offset="60%" stop-color="#678028" />
+                <stop offset="100%" stop-color="#344614" />
+            </linearGradient>
+
+            <linearGradient id="oliveBlackGrad" x1="20%" y1="10%" x2="90%" y2="90%">
+                <stop offset="0%" stop-color="#4C344A" />
+                <stop offset="50%" stop-color="#241426" />
+                <stop offset="100%" stop-color="#0E050F" />
+            </linearGradient>
+        </defs>
+    </svg>
+
+    <!-- Navigation Header (Ottimizzato per Smartphone con scorrimento touch privo di tagli) -->
+    <nav class="sticky top-0 z-50 glass-nav shadow-md"><div class="language-bar"><nav aria-label="Lingua / Language / Sprache"><button type="button" data-lang="it" lang="it" aria-pressed="true">Italiano</button><span aria-hidden="true">·</span><button type="button" data-lang="en" lang="en" aria-pressed="false">English</button><span aria-hidden="true">·</span><button type="button" data-lang="de" lang="de" aria-pressed="false">Deutsch</button></nav></div>
+        <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 sm:h-20 lg:h-24">
+                
+                <!-- Gruppo Logo + 6 Medaglie Piccole in una riga (con supporto scorrimento touch se lo schermo è molto stretto) -->
+                <div class="flex items-center gap-2 sm:gap-3 lg:gap-4 overflow-x-auto no-scrollbar max-w-[calc(100%-48px)] xl:max-w-none py-1">
+                    
+                    <!-- Main Logo with Florentine Giglio -->
+                    <a href="index.html#home" class="flex items-center gap-1.5 sm:gap-2.5 group shrink-0">
+                        <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-florence-green border-2 border-florence-gold flex items-center justify-center p-1 sm:p-1.5 shadow-md group-hover:scale-105 transition-transform shrink-0">
+                            <svg viewBox="0 0 100 120" class="w-full h-full text-florence-gold fill-current drop-shadow">
+                                <path d="M50 8 C48 18 43 28 35 34 C43 38 47 48 47 62 C45 62 43 61 41 60 C38 52 32 46 22 45 C18 45 13 47 10 51 C6 56 6 63 10 68 C16 75 26 77 34 74 C38 72 41 68 44 64 C43 78 40 91 30 102 C37 100 44 98 50 93 C56 98 63 100 70 102 C60 91 57 78 56 64 C59 68 62 72 66 74 C74 77 84 75 90 68 C94 63 94 56 90 51 C87 47 82 45 78 45 C68 46 62 52 59 60 C57 61 55 62 53 62 C53 48 57 38 65 34 C57 28 52 18 50 8 Z" />
+                                <path d="M43 67 L57 67 L55 72 L45 72 Z" fill="#E5C97A" />
+                                <circle cx="50" cy="110" r="4" fill="#C59B3F" />
+                            </svg>
+                        </div>
+                        <div class="flex items-center gap-1 sm:gap-2 whitespace-nowrap leading-none">
+                            <span class="hidden md:inline text-[9px] sm:text-[11px] uppercase tracking-[0.2em] text-florence-greenOlive font-bold">Azienda Agricola</span>
+                            <span class="font-cinzel text-sm sm:text-lg lg:text-xl font-extrabold tracking-wider text-florence-green">IL GIGLIO</span>
+                            <span class="text-florence-gold/60 font-serif text-xs sm:text-sm">―</span>
+                            <span class="text-[8px] sm:text-[10px] lg:text-[11px] font-extrabold uppercase tracking-[0.14em] sm:tracking-[0.18em] text-florence-goldDark">FIRENZE</span>
+                            <span class="text-[6px] text-florence-gold">●</span>
+                            <span class="text-[8px] sm:text-[10px] lg:text-[11px] font-extrabold uppercase tracking-[0.14em] sm:tracking-[0.18em] text-florence-goldDark">MARIGNOLLE</span>
+                        </div>
+                    </a>
+
+                    <!-- Divisorio verticale sottile -->
+                    <div class="h-6 sm:h-8 w-px bg-florence-gold/40 shrink-0"></div>
+
+                    <a href="premi.html" class="awards-nav" aria-label="Scopri tutti i premi dal 2026 al 2021"><i class="fa-solid fa-award" aria-hidden="true"></i><span>I nostri premi<small>2021 — 2026</small></span></a>
+
+                </div>
+
+                <!-- Desktop Navigation Links -->
+                <div class="hidden xl:flex items-center space-x-5 text-xs font-bold tracking-[0.14em] uppercase text-florence-green">
+                    <a href="index.html#lorenzo-gori" class="hover:text-florence-goldDark transition-colors">Lorenzo Gori</a>
+                    <a href="index.html#filosofia" class="hover:text-florence-goldDark transition-colors">La Tenuta</a>
+                    <a href="index.html#storia-marignolle" class="hover:text-florence-goldDark transition-colors">Storia di Marignolle</a>
+                    <a href="index.html#frantoio" class="hover:text-florence-goldDark transition-colors">Il Mandorlo</a>
+                    <a href="index.html#oliveta" class="hover:text-florence-goldDark transition-colors">Le 4 Cultivar</a>
+                    <a href="index.html#qualita-valori" class="hover:text-florence-goldDark transition-colors">Valori Nutrizionali</a>
+                    <a href="index.html#aceto" class="hover:text-florence-goldDark transition-colors">L'Aceto</a>
+                    <a href="index.html#abbinamenti" class="hover:text-florence-goldDark transition-colors">In Tavola</a>
+                    <a href="index.html#contatti" class="px-3.5 py-1.5 rounded-full bg-florence-green text-florence-gold border border-florence-gold hover:bg-florence-gold hover:text-florence-green transition-all shadow-sm">Contatti</a>
+                </div>
+
+                <!-- Hamburger Button per Smartphone (Target touch ampio 44x44px per dita) -->
+                <button id="mobileMenuBtn" aria-label="Apri Menu di Navigazione" class="xl:hidden w-11 h-11 flex items-center justify-center text-florence-green text-2xl active:scale-95 transition-transform rounded-lg">
+                    <i class="fa-solid fa-bars-staggered"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Design elegante a tutta larghezza con voci spaziate e facili da premere su touch) -->
+        <div id="mobileMenu" class="hidden xl:hidden bg-florence-parchmentDark border-t border-florence-gold/40 px-5 py-4 space-y-2 text-xs font-bold uppercase tracking-widest text-florence-green shadow-xl max-h-[80vh] overflow-y-auto">
+            <a href="index.html#lorenzo-gori" class="block py-2.5 px-3 rounded-lg hover:bg-florence-gold/15 active:bg-florence-gold/25 mobile-link">Lorenzo Gori (Arte dell'Olio)</a>
+            <a href="index.html#filosofia" class="block py-2.5 px-3 rounded-lg hover:bg-florence-gold/15 active:bg-florence-gold/25 mobile-link">La Tenuta di Marignolle</a>
+            <a href="index.html#storia-marignolle" class="block py-2.5 px-3 rounded-lg hover:bg-florence-gold/15 active:bg-florence-gold/25 mobile-link">Storia di Marignolle</a>
+            <a href="index.html#frantoio" class="block py-2.5 px-3 rounded-lg hover:bg-florence-gold/15 active:bg-florence-gold/25 mobile-link">Frantoio Il Mandorlo</a>
+            <a href="index.html#oliveta" class="block py-2.5 px-3 rounded-lg hover:bg-florence-gold/15 active:bg-florence-gold/25 mobile-link">Le 4 Cultivar</a>
+            <a href="index.html#qualita-valori" class="block py-2.5 px-3 rounded-lg hover:bg-florence-gold/15 active:bg-florence-gold/25 mobile-link">Dichiarazione Nutrizionale</a>
+            <a href="index.html#aceto" class="block py-2.5 px-3 rounded-lg hover:bg-florence-gold/15 active:bg-florence-gold/25 mobile-link">L'Aceto di Tenuta</a>
+            <a href="index.html#abbinamenti" class="block py-2.5 px-3 rounded-lg hover:bg-florence-gold/15 active:bg-florence-gold/25 mobile-link">In Tavola</a>
+            <a href="index.html#contatti" class="block py-3 px-4 rounded-xl bg-florence-green text-florence-gold border border-florence-gold text-center font-extrabold mobile-link shadow-md mt-2">
+                <i class="fa-solid fa-phone mr-1.5"></i> Contatti & Prenotazioni
+            </a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION CON FOTO ULIVE E COLLINE -->
+    <header id="home" class="relative overflow-hidden py-12 sm:py-16 lg:py-24 border-b-4 border-florence-gold">
+        <div class="absolute inset-0 z-0">
+            <div class="w-full h-full bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1541888946425-d0fbb186f5f7?auto=format&fit=crop&w=2000&q=80'); filter: sepia(0.12) saturate(1.15) brightness(0.55);"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-florence-greenDark/95 via-florence-green/85 to-florence-greenDark/95"></div>
+        </div>
+
+        <!-- Ramo d'olivo botanico naturale in basso a destra -->
+        <div class="absolute right-0 bottom-0 z-10 w-20 sm:w-32 md:w-44 pointer-events-none select-none opacity-40 sm:opacity-60">
+            <svg viewBox="0 0 220 300" class="w-full h-auto drop-shadow-md">
+                <use href="index.html#botanicalOliveBranch" />
+            </svg>
+        </div>
+
+        <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="space-y-4 sm:space-y-6 text-white">
+                <div class="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-florence-greenDark/90 border border-florence-gold text-florence-goldLight text-[10px] sm:text-xs tracking-[0.18em] sm:tracking-[0.25em] uppercase font-cinzel font-bold shadow-md mx-auto">
+                    <i class="fa-solid fa-crown text-florence-gold text-[10px] sm:text-xs"></i>
+                    <span>Olio d'Eccellenza dal 1986 • Tenuta di Marignolle</span>
+                </div>
+
+                <h1 class="font-cinzel text-2xl sm:text-5xl lg:text-6xl font-extrabold tracking-wide text-white leading-tight sm:leading-tight">
+                    L'OLIO DELLA NOSTRA TERRA.
+                </h1>
+                
+                <p class="font-cormorant italic text-lg sm:text-2xl lg:text-3xl text-florence-goldLight leading-relaxed max-w-3xl mx-auto px-2">
+                    "Questo olio extravergine di oliva proviene interamente dalle nostre olive coltivate nella Tenuta di Marignolle, sulle colline di Firenze."
+                </p>
+
+                <p class="text-xs sm:text-sm text-gray-200 leading-relaxed max-w-2xl mx-auto font-body px-2">
+                    Dal 1986, <strong>Lorenzo Gori</strong> infonde una dedizione incrollabile in ogni istante della produzione: è presente personalmente in ogni gesto, dalla potatura manuale delle piante alla cura del terreno, dalla scelta dell'istante esatto di raccolta fino alla frangitura e al meticoloso imbottigliamento all'origine.
+                </p>
+
+                <!-- 3 Pilastri Informativi -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 pt-3 sm:pt-4 max-w-3xl mx-auto">
+                    <div class="bg-black/50 border border-florence-gold/40 rounded-xl p-3 sm:p-4 backdrop-blur-sm">
+                        <span class="text-[9px] uppercase tracking-widest text-florence-gold font-bold block">Tradizione</span>
+                        <span class="font-cinzel text-sm sm:text-base font-bold text-white block mt-0.5">Dal 1986</span>
+                        <span class="text-[10px] text-gray-300">Maestria e presenza costante</span>
+                    </div>
+                    <div class="bg-black/50 border border-florence-gold/40 rounded-xl p-3 sm:p-4 backdrop-blur-sm">
+                        <span class="text-[9px] uppercase tracking-widest text-florence-gold font-bold block">Origine & Metodo</span>
+                        <span class="font-cinzel text-sm sm:text-base font-bold text-white block mt-0.5">100% Italiano</span>
+                        <span class="text-[10px] text-gray-300">Spremitura a freddo immediata</span>
+                    </div>
+                    <div class="bg-black/50 border border-florence-gold/40 rounded-xl p-3 sm:p-4 backdrop-blur-sm">
+                        <span class="text-[9px] uppercase tracking-widest text-florence-gold font-bold block">Oliveta di Tenuta</span>
+                        <span class="font-cinzel text-sm sm:text-base font-bold text-white block mt-0.5">4 Cultivar</span>
+                        <span class="text-[10px] text-gray-300">Frantoio, Leccino, Moraiolo, Pendolino</span>
+                    </div>
+                </div>
+
+                <!-- Call to action buttons ottimizzati per tocco smartphone -->
+                <div class="pt-3 sm:pt-4 flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 items-stretch sm:items-center max-w-md sm:max-w-none mx-auto">
+                    <a href="index.html#lorenzo-gori" class="w-full sm:w-auto px-6 sm:px-7 py-3 rounded-full bg-florence-gold hover:bg-florence-goldLight active:scale-95 text-florence-green font-cinzel font-bold uppercase tracking-wider text-xs transition shadow-xl text-center">
+                        La Passione di Lorenzo Gori
+                    </a>
+                    <a href="index.html#oliveta" class="w-full sm:w-auto px-6 sm:px-7 py-3 rounded-full border-2 border-florence-gold text-florence-goldLight hover:bg-white/10 active:scale-95 font-cinzel font-semibold uppercase tracking-wider text-xs transition text-center">
+                        Le 4 Cultivar
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- SEZIONE MONOGRAFICA: LORENZO GORI DAL 1986 -->
+<section id="premi" class="awards-section" aria-labelledby="awards-title"><div class="awards-content"><a class="back-home" href="index.html">← Torna alla pagina principale</a><p class="awards-eyebrow">CONCORSO FRANTOIO IL MANDORLO</p><h2 id="awards-title">I nostri premi</h2><p class="awards-intro">Sei anni di riconoscimenti per l’olio Il Giglio. Tutti i certificati, dal più recente.</p><div class="awards-gallery"><figure class="award-certificate"><figcaption><span>2026</span><span>3° classificato</span></figcaption><a class="certificate-link" href="premio-2026.svg" data-year="2026" aria-label="Ingrandisci il certificato 2026"><img src="premio-2026.svg" alt="Certificato Frantoio Il Mandorlo 2026 — Il Giglio, 3° classificato" loading="lazy" decoding="async"></a></figure><figure class="award-certificate"><figcaption><span>2025</span><span>3° classificato</span></figcaption><a class="certificate-link" href="premio-2025.svg" data-year="2025" aria-label="Ingrandisci il certificato 2025"><img src="premio-2025.svg" alt="Certificato Frantoio Il Mandorlo 2025 — Il Giglio, 3° classificato" loading="lazy" decoding="async"></a></figure><figure class="award-certificate"><figcaption><span>2024</span><span>3° classificato</span></figcaption><a class="certificate-link" href="premio-2024.svg" data-year="2024" aria-label="Ingrandisci il certificato 2024"><img src="premio-2024.svg" alt="Certificato Frantoio Il Mandorlo 2024 — Il Giglio, 3° classificato" loading="lazy" decoding="async"></a></figure><figure class="award-certificate"><figcaption><span>2023</span><span>4° classificato</span></figcaption><a class="certificate-link" href="premio-2023.svg" data-year="2023" aria-label="Ingrandisci il certificato 2023"><img src="premio-2023.svg" alt="Certificato Frantoio Il Mandorlo 2023 — Il Giglio, 4° classificato" loading="lazy" decoding="async"></a></figure><figure class="award-certificate"><figcaption><span>2022</span><span>3° classificato</span></figcaption><a class="certificate-link" href="premio-2022.svg" data-year="2022" aria-label="Ingrandisci il certificato 2022"><img src="premio-2022.svg" alt="Certificato Frantoio Il Mandorlo 2022 — Il Giglio, 3° classificato" loading="lazy" decoding="async"></a></figure><figure class="award-certificate"><figcaption><span>2021</span><span>4° classificato</span></figcaption><a class="certificate-link" href="premio-2021.svg" data-year="2021" aria-label="Ingrandisci il certificato 2021"><img src="premio-2021.svg" alt="Certificato Frantoio Il Mandorlo 2021 — Il Giglio, 4° classificato" loading="lazy" decoding="async"></a></figure></div></div></section>
+    
+
+    <!-- FILOSOFIA E TERRA -->
+    
+
+    <!-- SEZIONE STORICA: IL COLLE DI MARIGNOLLE -->
+    
+
+    <!-- FRANTOIO IL MANDORLO DI FIRENZE -->
+    
+
+    <!-- LE 4 CULTIVAR DELL'OLIVETA -->
+    
+
+    <!-- SECTION QUALITÀ & VALORI NUTRIZIONALI -->
+    
+
+    <!-- SECTION ACETO -->
+    
+
+    <!-- SECTION ABBINAMENTI -->
+    
+
+    <!-- SECTION CONTATTI (Perfettamente ottimizzata per smartphone con bottoni touch grandi) -->
+    
+
+    <!-- SIGILLO DI TENUTA -->
+    
+
+    <!-- FOOTER -->
+    <footer class="bg-florence-greenDark text-gray-400 py-10 sm:py-14 border-t-4 border-florence-gold text-xs">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-10">
+                
+                <div class="space-y-3">
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 sm:w-10 sm:h-10 text-florence-gold">
+                            <svg viewBox="0 0 100 120" class="w-full h-full fill-current">
+                                <path d="M50 8 C48 18 43 28 35 34 C43 38 47 48 47 62 C45 62 43 61 41 60 C38 52 32 46 22 45 C18 45 13 47 10 51 C6 56 6 63 10 68 C16 75 26 77 34 74 C38 72 41 68 44 64 C43 78 40 91 30 102 C37 100 44 98 50 93 C56 98 63 100 70 102 C60 91 57 78 56 64 C59 68 62 72 66 74 C74 77 84 75 90 68 C94 63 94 56 90 51 C87 47 82 45 78 45 C68 46 62 52 59 60 C57 61 55 62 53 62 C53 48 57 38 65 34 C57 28 52 18 50 8 Z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="font-cinzel text-white text-sm sm:text-base font-bold tracking-wider block">IL GIGLIO</span>
+                            <span class="text-[9px] uppercase tracking-widest text-florence-gold block">FIRENZE • MARIGNOLLE</span>
+                        </div>
+                    </div>
+                    <p class="text-[11px] text-gray-300 leading-relaxed font-body">
+                        Azienda Agricola Il Giglio di Lorenzo Gori. Olio extravergine di oliva d'eccellenza prodotto dal 1986 con partecipazione diretta dalla raccolta all'imbottigliamento nella Tenuta di Marignolle.
+                    </p>
+                </div>
+
+                <div>
+                    <h5 class="font-cinzel text-white font-bold uppercase tracking-wider text-xs mb-2 sm:mb-3">
+                        Lavorazione Artigianale
+                    </h5>
+                    <ul class="space-y-1.5 text-[11px] text-gray-300">
+                        <li>• Olio d'eccellenza prodotto dal 1986</li>
+                        <li>• Raccolta a mano all'invaiatura</li>
+                        <li>• Frangitura immediata a freddo (&lt; 24°C)</li>
+                        <li>• Presenza diretta di Lorenzo Gori in ogni fase</li>
+                        <li>• Confezionamento all'origine a Marignolle</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="font-cinzel text-white font-bold uppercase tracking-wider text-xs mb-2 sm:mb-3">
+                        Tenuta
+                    </h5>
+                    <p class="text-[11px] text-gray-300 leading-relaxed space-y-1">
+                        <span class="block font-bold text-white">Azienda Agricola Il Giglio</span>
+                        <span class="block">Tenuta di Marignolle, Firenze (FI) – Italia</span>
+                        <span class="block text-florence-goldLight">Lorenzo Gori</span>
+                        <span class="block pt-1">
+                            <a href="tel:+393931413932" class="hover:text-florence-gold active:text-florence-gold transition-colors whitespace-nowrap"><i class="fa-solid fa-phone text-florence-gold mr-1"></i> +39 393 141 3932</a>
+                        </span>
+                        <span class="block">
+                            <a href="mailto:lorenzogori.ilgiglio@gmail.com" class="hover:text-florence-gold active:text-florence-gold transition-colors whitespace-nowrap"><i class="fa-solid fa-envelope text-florence-gold mr-1"></i> lorenzogori.ilgiglio@gmail.com</a>
+                        </span>
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="border-t border-white/10 pt-5 sm:pt-6 flex flex-col sm:flex-row items-center justify-between text-[11px] text-gray-400 gap-3 text-center sm:text-left">
+                <div>
+                    © Azienda Agricola Il Giglio di Lorenzo Gori • Tenuta di Marignolle, Firenze.
+                </div>
+                <div class="flex space-x-3 text-florence-gold justify-center">
+                    <span>Olio d'Eccellenza dal 1986</span>
+                    <span>•</span>
+                    <span>100% Italiano</span>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Script Menu Mobile con chiusura automatica al tap -->
+    <script>
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            document.querySelectorAll('.mobile-link').forEach(link => {
+                link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+            });
+        }
+    </script>
+
+<style>
+
+.awards-nav{display:flex;align-items:center;gap:9px;color:#0d2416;text-decoration:none;padding:6px 8px;font-family:Cinzel,serif;font-weight:700;font-size:12px;white-space:nowrap}.awards-nav i{color:#a17b37;font-size:24px}.awards-nav small{display:block;font-family:Montserrat,sans-serif;font-size:9px;letter-spacing:.15em;margin-top:2px}.awards-nav:focus-visible{outline:2px solid #ac8548;outline-offset:4px}.awards-section{background:#f8f5eb;padding:72px 20px;scroll-margin-top:110px;border-bottom:1px solid #c4a86a}.awards-content{max-width:980px;margin:auto}.awards-eyebrow{text-align:center;color:#8b6b32;font-size:11px;font-weight:700;letter-spacing:.2em}.awards-section h2{text-align:center;font-family:Cinzel,serif;font-size:clamp(28px,4vw,44px);color:#0d2416;margin:12px 0}.awards-intro{text-align:center;color:#586352;line-height:1.7;margin:0 auto 44px;max-width:580px}.awards-gallery{display:flex;flex-direction:column;gap:42px}.award-certificate{margin:0}.award-certificate figcaption{display:flex;justify-content:space-between;align-items:center;gap:16px;color:#0d2416;margin-bottom:12px;font-family:Cinzel,serif;font-weight:700}.award-certificate figcaption span:first-child{font-size:26px}.award-certificate figcaption span:last-child{font-size:13px;color:#75603d}.award-certificate img{display:block;width:100%;height:auto;box-shadow:0 8px 28px #0d241618}.award-certificate .certificate-link{border-radius:0}@media(max-width:600px){.awards-section{padding:44px 16px;scroll-margin-top:88px}.awards-gallery{gap:28px}.awards-intro{font-size:14px;margin-bottom:28px}.awards-nav{font-size:10px;gap:6px;padding:4px}.awards-nav i{font-size:21px}}
+
+.certificate-link { display:block; border-radius:4px; }
+.certificate-link:focus-visible { outline:3px solid #ac8548; outline-offset:4px; }
+#certificate-dialog { width:min(1100px,96vw); max-height:94dvh; padding:16px; border:0; border-radius:12px; background:#fffdf7; color:#0d2416; }
+#certificate-dialog::backdrop { background:rgba(0,0,0,.8); }
+.certificate-header { display:flex; justify-content:space-between; align-items:center; gap:16px; margin-bottom:12px; }
+#certificate-close { cursor:pointer; padding:10px 16px; border:1px solid #0d2416; border-radius:6px; background:white; }
+#certificate-image { display:block; max-width:100%; max-height:75dvh; object-fit:contain; margin:auto; }
+#certificate-original { display:inline-block; padding:10px 0; text-decoration:underline; }
+</style>
+<dialog id="certificate-dialog" aria-labelledby="certificate-title">
+  <div class="certificate-header"><h2 id="certificate-title">Certificato del premio</h2><button id="certificate-close" type="button">Chiudi ✕</button></div>
+  <img id="certificate-image" alt="">
+  <a id="certificate-original" target="_blank" rel="noopener">Apri la foto a dimensione intera</a>
+</dialog>
+<script>
+(() => {
+  const dialog = document.getElementById('certificate-dialog');
+  if (!dialog || typeof dialog.showModal !== 'function') return;
+  const image = document.getElementById('certificate-image');
+  const title = document.getElementById('certificate-title');
+  const close = document.getElementById('certificate-close');
+  let previousOverflow = '';
+  document.querySelectorAll('.certificate-link').forEach(link => {
+    link.addEventListener('click', event => {
+      if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      title.textContent = 'Certificato del premio ' + link.dataset.year;
+      image.alt = 'Certificato Frantoio Il Mandorlo — Il Giglio — ' + link.dataset.year;
+      image.src = link.href;
+      document.getElementById('certificate-original').href = link.href;
+      previousOverflow = document.body.style.overflow;
+      document.body.style.overflow = 'hidden';
+      dialog.showModal();
+    });
+  });
+  close.addEventListener('click', () => dialog.close());
+  dialog.addEventListener('click', event => {
+    const bounds = dialog.getBoundingClientRect();
+    if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) dialog.close();
+  });
+  dialog.addEventListener('close', () => { document.body.style.overflow = previousOverflow; });
+})();
+</script>
+
+
+<script>
+(() => {
+ const dictionary = {"I nostri premi | Il Giglio — Firenze":{"en":"Our awards | Il Giglio — Florence","de":"Unsere Auszeichnungen | Il Giglio — Florenz"},"← Torna alla pagina principale":{"en":"← Back to the home page","de":"← Zurück zur Startseite"},"Azienda Agricola Il Giglio Firenze | Tenuta di Marignolle - Olio EVO & Aceto Artigianale": {"en": "Il Giglio Farm, Florence | Marignolle Estate — Extra Virgin Olive Oil & Artisan Vinegar", "de": "Landgut Il Giglio, Florenz | Tenuta di Marignolle — Natives Olivenöl extra & handwerklicher Essig"}, "Azienda Agricola": {"en": "Farm", "de": "Landgut"}, "FIRENZE": {"en": "FLORENCE", "de": "FLORENZ"}, "I nostri premi": {"en": "Our awards", "de": "Unsere Auszeichnungen"}, "La Tenuta": {"en": "The Estate", "de": "Das Landgut"}, "Storia di Marignolle": {"en": "Marignolle’s History", "de": "Geschichte von Marignolle"}, "Le 4 Cultivar": {"en": "The 4 Olive Varieties", "de": "Die 4 Olivensorten"}, "Valori Nutrizionali": {"en": "Nutrition", "de": "Nährwerte"}, "L'Aceto": {"en": "Our Vinegar", "de": "Unser Essig"}, "In Tavola": {"en": "At the Table", "de": "Genussempfehlungen"}, "Contatti": {"en": "Contact", "de": "Kontakt"}, "Lorenzo Gori (Arte dell'Olio)": {"en": "Lorenzo Gori (The Art of Olive Oil)", "de": "Lorenzo Gori (Die Kunst des Olivenöls)"}, "La Tenuta di Marignolle": {"en": "The Marignolle Estate", "de": "Das Landgut Marignolle"}, "Frantoio Il Mandorlo": {"en": "Il Mandorlo Olive Mill", "de": "Ölmühle Il Mandorlo"}, "Dichiarazione Nutrizionale": {"en": "Nutrition Declaration", "de": "Nährwertdeklaration"}, "L'Aceto di Tenuta": {"en": "Estate Vinegar", "de": "Essig vom Landgut"}, "Contatti & Prenotazioni": {"en": "Contact & Orders", "de": "Kontakt & Bestellungen"}, "Olio d'Eccellenza dal 1986 • Tenuta di Marignolle": {"en": "Exceptional Olive Oil Since 1986 • Marignolle Estate", "de": "Olivenöl von höchster Qualität seit 1986 • Landgut Marignolle"}, "L'OLIO DELLA NOSTRA TERRA.": {"en": "OLIVE OIL FROM OUR LAND.", "de": "OLIVENÖL AUS UNSERER HEIMAT."}, "\"Questo olio extravergine di oliva proviene interamente dalle nostre olive coltivate nella Tenuta di Marignolle, sulle colline di Firenze.\"": {"en": "“This extra virgin olive oil is made entirely from olives grown on our Marignolle Estate, in the hills of Florence.”", "de": "„Dieses native Olivenöl extra stammt ausschließlich aus Oliven unseres Landguts Marignolle in den Hügeln von Florenz.“"}, "Dal 1986,": {"en": "Since 1986,", "de": "Seit 1986 widmet sich"}, "infonde una dedizione incrollabile in ogni istante della produzione: è presente personalmente in ogni gesto, dalla potatura manuale delle piante alla cura del terreno, dalla scelta dell'istante esatto di raccolta fino alla frangitura e al meticoloso imbottigliamento all'origine.": {"en": "has brought unwavering dedication to every stage of production: personally tending the trees and soil, selecting the perfect harvest time, overseeing milling and carefully bottling every drop on the estate.", "de": "mit unermüdlichem Einsatz jeder Produktionsphase: Er kümmert sich persönlich um den Baumschnitt und die Böden, wählt den richtigen Erntezeitpunkt, begleitet die Verarbeitung und überwacht die sorgfältige Abfüllung direkt auf dem Landgut."}, "Tradizione": {"en": "Tradition", "de": "Tradition"}, "Dal 1986": {"en": "Since 1986", "de": "Seit 1986"}, "Maestria e presenza costante": {"en": "Expertise and constant care", "de": "Erfahrung und ständige Sorgfalt"}, "Origine & Metodo": {"en": "Origin & Method", "de": "Herkunft & Verfahren"}, "100% Italiano": {"en": "100% Italian", "de": "100 % italienisch"}, "Spremitura a freddo immediata": {"en": "Immediate cold extraction", "de": "Sofortige Kaltextraktion"}, "Oliveta di Tenuta": {"en": "Estate Olive Grove", "de": "Olivenhain des Landguts"}, "4 Cultivar": {"en": "4 Olive Varieties", "de": "4 Olivensorten"}, "La Passione di Lorenzo Gori": {"en": "Lorenzo Gori’s Passion", "de": "Die Leidenschaft von Lorenzo Gori"}, "CONCORSO FRANTOIO IL MANDORLO": {"en": "FRANTOIO IL MANDORLO COMPETITION", "de": "WETTBEWERB FRANTOIO IL MANDORLO"}, "Sei anni di riconoscimenti per l’olio Il Giglio. Tutti i certificati, dal più recente.": {"en": "Six years of recognition for Il Giglio olive oil. Every certificate, starting with the most recent.", "de": "Sechs Jahre Auszeichnungen für das Olivenöl Il Giglio. Alle Urkunden, beginnend mit der neuesten."}, "3° classificato": {"en": "3rd place", "de": "3. Platz"}, "4° classificato": {"en": "4th place", "de": "4. Platz"}, "Maestria & Presenza Costante": {"en": "Expertise & Constant Care", "de": "Erfahrung & persönliche Begleitung"}, "Lorenzo Gori e l'Arte dell'Olio": {"en": "Lorenzo Gori and the Art of Olive Oil", "de": "Lorenzo Gori und die Kunst des Olivenöls"}, "\"Un impegno quotidiano che dura da decenni: la vera eccellenza nasce quando passione, competenza e presenza diretta si uniscono in ogni fase.\"": {"en": "“Decades of daily commitment: true excellence comes from passion, expertise and personal involvement at every stage.”", "de": "„Ein täglicher Einsatz über Jahrzehnte hinweg: Wahre Spitzenqualität entsteht, wenn Leidenschaft, Erfahrung und persönliche Begleitung in jeder Phase zusammenkommen.“"}, "Cura Diretta & Presenza Costante": {"en": "Personal Attention & Constant Care", "de": "Persönlicher Einsatz & ständige Sorgfalt"}, "Fin dal": {"en": "Since", "de": "Seit"}, "produce olio extravergine d'oliva d'eccellenza sulle colline fiorentine di Marignolle senza mai delegare le fasi cruciali del lavoro.": {"en": "has been producing exceptional extra virgin olive oil in the hills of Marignolle, Florence, always taking personal responsibility for the key stages of production.", "de": "erzeugt in den Hügeln von Marignolle bei Florenz natives Olivenöl extra von höchster Qualität und übernimmt die entscheidenden Arbeitsschritte stets persönlich."}, "Mette il cuore e un'attenzione scrupolosa in": {"en": "He puts his heart and meticulous attention into", "de": "Mit Herzblut und größter Sorgfalt begleitet er"}, "ogni singolo momento del ciclo produttivo": {"en": "every moment of the production cycle", "de": "jeden einzelnen Schritt der Herstellung"}, ": segue l'oliveta giorno per giorno, partecipa attivamente alla raccolta manuale, supervisiona la molitura al frantoio minuto per minuto e cura personalmente ogni singola bottiglia fino all'imbottigliamento e alla sigillatura.": {"en": ": tending the grove daily, taking part in hand harvesting, monitoring milling minute by minute and personally caring for every bottle through filling and sealing.", "de": ": Er pflegt den Olivenhain täglich, hilft bei der Ernte von Hand, überwacht die Verarbeitung in der Ölmühle und kümmert sich um jede Flasche bis zum Abfüllen und Verschließen."}, "Cura & Potatura": {"en": "Care & Pruning", "de": "Pflege & Baumschnitt"}, "Controllo costante dello stato vegetativo delle quattro cultivar sui terrazzamenti di Marignolle. Potature mirate per arieggiare la chioma e garantire frutti sani.": {"en": "Constant monitoring of the four olive varieties on the terraces of Marignolle. Targeted pruning opens up the canopy and helps keep the fruit healthy.", "de": "Der Zustand der vier Olivensorten auf den Terrassen von Marignolle wird laufend kontrolliert. Gezielter Baumschnitt sorgt für luftige Kronen und gesunde Früchte."}, "Raccolta Manuale": {"en": "Hand Harvesting", "de": "Ernte von Hand"}, "Partecipazione diretta alla coglitura manuale: le drupe vengono selezionate sui rami nell'esatto punto d'invaiatura, proteggendone l'integrità.": {"en": "Personally involved in hand harvesting: olives are selected on the branches at the precise moment their colour begins to change, keeping the fruit intact.", "de": "Persönlicher Einsatz bei der Ernte von Hand: Die Oliven werden direkt am Zweig zu Beginn der Farbveränderung ausgewählt und schonend geerntet."}, "Presenza in Frantoio": {"en": "At the Olive Mill", "de": "In der Ölmühle"}, "Accompagna personalmente le olive al Frantoio Il Mandorlo a poche ore dal distacco. Segue la frangitura e la separazione a freddo senza sosta.": {"en": "He personally brings the olives to Il Mandorlo within hours of picking and closely follows crushing and cold separation.", "de": "Er bringt die Oliven wenige Stunden nach der Ernte persönlich zur Ölmühle Il Mandorlo und begleitet das Zerkleinern und die Kaltextraktion."}, "Imbottigliamento": {"en": "Bottling", "de": "Abfüllung"}, "Confezionamento a regola d'arte all'origine nella Tenuta: ogni bottiglia viene colmata, tappata ed etichettata sotto il suo sguardo vigile.": {"en": "Carefully bottled on the estate: every bottle is filled, sealed and labelled under his watchful eye.", "de": "Sorgfältige Abfüllung direkt auf dem Landgut: Jede Flasche wird unter seinem wachsamen Blick gefüllt, verschlossen und etikettiert."}, "\"Dal 1986 non abbiamo mai concepito l'olio come un prodotto industriale: per noi è il respiro della terra di Marignolle, un dono vivo che esige rispetto, fatica quotidiana e amore incondizionato.\"": {"en": "“Since 1986, we have never thought of olive oil as an industrial product: to us, it is the breath of Marignolle’s land, a living gift that calls for respect, daily effort and unconditional love.”", "de": "„Seit 1986 verstehen wir Olivenöl niemals als Industrieprodukt: Für uns ist es der Atem der Erde von Marignolle, ein lebendiges Geschenk, das Respekt, tägliche Arbeit und bedingungslose Liebe verlangt.“"}, "La Nostra Terra": {"en": "Our Land", "de": "Unsere Heimat"}, "Sulle storiche colline che abbracciano Firenze, dove la luce della Toscana incontra la terra sassosa e il clima ideale per la coltura dell'olivo.": {"en": "On the historic hills surrounding Florence, where Tuscan sunlight meets stony soil and a climate ideal for growing olives.", "de": "In den historischen Hügeln rund um Florenz, wo das Licht der Toskana auf steinige Böden und ein ideales Klima für den Olivenanbau trifft."}, "L'Oliveta di Collina": {"en": "The Hillside Olive Grove", "de": "Der Olivenhain am Hang"}, "Le nostre piante crescono adagiate sui terrazzamenti di Marignolle, esposte al sole della Toscana. Ogni olivo viene potato e accudito secondo la migliore tradizione agronomica fiorentina.": {"en": "Our trees grow on the terraces of Marignolle, bathed in Tuscan sunshine. Each olive tree is pruned and tended according to the finest Florentine farming traditions.", "de": "Unsere Bäume wachsen auf den sonnigen Terrassen von Marignolle. Jeder Olivenbaum wird nach bester florentinischer Landwirtschaftstradition geschnitten und gepflegt."}, "Raccolta a Mano": {"en": "Picked by Hand", "de": "Von Hand geerntet"}, "Le olive vengono colte direttamente dai rami nell'esatto momento dell'invaiatura, quando il frutto passa dal verde al violaceo e la concentrazione di polifenoli e aromi raggiunge il suo apice.": {"en": "Olives are picked straight from the branches as their colour turns from green to purple, when polyphenols and aromas reach their peak.", "de": "Die Oliven werden direkt von den Zweigen geerntet, sobald sich ihre Farbe von Grün zu Violett verändert und der Gehalt an Polyphenolen und Aromen seinen Höhepunkt erreicht."}, "Frangitura Immediata": {"en": "Immediate Milling", "de": "Sofortige Verarbeitung"}, "Entro pochissime ore dal distacco dall'albero, le olive raggiungono il frantoio per essere molite a freddo (< 24°C), preservando intatto il patrimonio di polifenoli ed essenze vegetali.": {"en": "Within hours of picking, the olives reach the mill for cold extraction below 24°C, preserving their polyphenols and plant aromas.", "de": "Wenige Stunden nach der Ernte erreichen die Oliven die Ölmühle und werden bei unter 24 °C kalt verarbeitet. So bleiben Polyphenole und pflanzliche Aromen erhalten."}, "Firenze & Le Sue Colline": {"en": "Florence & Its Hills", "de": "Florenz & seine Hügel"}, "La Storia del Colle di Marignolle": {"en": "The History of Marignolle Hill", "de": "Die Geschichte des Hügels Marignolle"}, "Un colle nobile e appartato a sud-ovest di Firenze, celebrato nei secoli per la salubrità dell'aria, la magnificenza dei panorami e la generosità della terra.": {"en": "A noble, secluded hill southwest of Florence, celebrated for centuries for its healthy air, magnificent views and generous land.", "de": "Ein vornehmer, ruhiger Hügel südwestlich von Florenz, seit Jahrhunderten für seine reine Luft, herrlichen Ausblicke und fruchtbaren Böden geschätzt."}, "Retaggio Mediceo & Umanesimo": {"en": "Medici Heritage & Humanism", "de": "Das Erbe der Medici & Humanismus"}, "Fin dal Trecento e per tutto il Rinascimento, Marignolle fu scelta dalle più influenti famiglie patrizie fiorentine – tra cui i Medici, i Girolami e gli Acciaioli – come rifugio agreste prediletto. Qui, a pochi passi da Bellosguardo e da Porta Romana, la nobiltà fiorentina edificò ville e fattorie modello circondate da ordinati oliveti e vigne.": {"en": "From the 14th century throughout the Renaissance, Marignolle was a favourite country retreat for influential Florentine families, including the Medici, Girolami and Acciaioli. Near Bellosguardo and Porta Romana, they built villas and model farms surrounded by olive groves and vineyards.", "de": "Seit dem 14. Jahrhundert und während der Renaissance diente Marignolle einflussreichen florentinischen Familien wie den Medici, Girolami und Acciaioli als beliebter Landsitz. In der Nähe von Bellosguardo und Porta Romana entstanden Villen und vorbildliche Gutshöfe, umgeben von Olivenhainen und Weinbergen."}, "Perfino": {"en": "Even", "de": "Auch"}, ", che amava la quiete di queste alture a sud dell'Arno, trovò tra questi colli l'ispirazione per i suoi studi, affascinato dal cielo limpido e dal silenzio che ancora oggi avvolge la nostra Tenuta.": {"en": ", who loved the tranquillity of these hills south of the Arno, found inspiration for his studies here, drawn by the clear skies and the silence that still surrounds our estate.", "de": ", der die Ruhe dieser Hügel südlich des Arno schätzte, fand hier Anregungen für seine Studien – fasziniert vom klaren Himmel und der Stille, die unser Landgut noch heute umgibt."}, "Il Terroir di Marignolle": {"en": "The Terroir of Marignolle", "de": "Das Terroir von Marignolle"}, "La conformazione geologica delle colline di Marignolle è un dono prezioso per l'olivo: il suolo è dominato da formazioni di": {"en": "Marignolle’s geology is a precious gift for olive trees: the soil is dominated by", "de": "Die geologische Beschaffenheit von Marignolle ist ein wertvolles Geschenk für den Olivenbaum: Der Boden wird geprägt von"}, "alberese e galestro": {"en": "alberese limestone and galestro shale", "de": "Alberese-Kalkstein und Galestro-Schiefer"}, ", ricche di scheletro calcareo e sali minerali. Questo garantisce un drenaggio naturale perfetto, costringendo le radici secolari a scendere in profondità.": {"en": ", rich in limestone fragments and minerals. This ensures excellent natural drainage and encourages the roots of centuries-old trees to grow deep.", "de": ", reich an kalkhaltigem Gestein und Mineralstoffen. Dadurch wird der Boden natürlich entwässert, und die Wurzeln der jahrhundertealten Bäume wachsen tief in die Erde."}, "L'esposizione solatia e la costante brezza collinare che allontana l'umidità proteggono la drupa in modo naturale, regalando un olio di straordinaria densità, ricchissimo di polifenoli e con una vivace e aristocratica nota fruttata.": {"en": "Sunny exposure and a steady hillside breeze naturally protect the olives from moisture, producing an exceptionally rich oil, abundant in polyphenols, with a lively, refined fruitiness.", "de": "Die sonnige Lage und die stetige Brise halten Feuchtigkeit fern und schützen die Oliven auf natürliche Weise. So entsteht ein besonders gehaltvolles, polyphenolreiches Öl mit lebhafter, feiner Fruchtigkeit."}, "Molitura Tradizionale & Tecnologia": {"en": "Traditional Milling & Technology", "de": "Traditionelle Verarbeitung & moderne Technik"}, "Frantoio \"Il Mandorlo\" di Firenze": {"en": "Il Mandorlo Olive Mill, Florence", "de": "Ölmühle Il Mandorlo in Florenz"}, "\"La maestria di chi dal 1974 trasforma i frutti delle colline fiorentine in puro oro verde, nel connubio perfetto tra tradizione contadina e avanguardia tecnologica.\"": {"en": "“Since 1974, skilled hands have transformed the fruits of Florence’s hills into pure green gold, bringing together farming tradition and advanced technology.”", "de": "„Seit 1974 verwandeln erfahrene Hände die Früchte der florentinischen Hügel in grünes Gold – in einer Verbindung aus bäuerlicher Tradition und moderner Technik.“"}, "Per dare forma all'Olio Extravergine de": {"en": "To create the extra virgin olive oil of", "de": "Für das native Olivenöl extra von"}, ", Lorenzo Gori affida le olive della Tenuta alle mani esperte del": {"en": ", Lorenzo Gori entrusts the estate’s olives to the skilled hands of", "de": "vertraut Lorenzo Gori die Oliven des Landguts den erfahrenen Händen der"}, ", storico presidio dell'eccellenza olearia situato sulle colline di Firenze. Da tre generazioni di maestri frantoiani, Il Mandorlo è sinonimo di passione viscerale per il territorio e custodia rigorosa della cultivar toscana.": {"en": ", a historic centre of olive oil excellence in the hills of Florence. For three generations, Il Mandorlo’s master millers have shown deep passion for the land and careful respect for Tuscan olive varieties.", "de": "an, einem traditionsreichen Zentrum der Olivenölherstellung in den Hügeln von Florenz. Seit drei Generationen stehen die Ölmüller von Il Mandorlo für tiefe Verbundenheit mit der Region und den sorgfältigen Umgang mit toskanischen Olivensorten."}, "La filiera tra la nostra": {"en": "The journey from our", "de": "Der Weg von unserem"}, "Tenuta di Marignolle": {"en": "Marignolle Estate", "de": "Landgut Marignolle"}, "e il frantoio è questione di pochissime ore: Lorenzo segue in prima persona il trasporto e l'avvio tempestivo alla molitura. Questo annulla qualsiasi fenomeno di ossidazione o fermentazione, consegnando alla bottiglia tutta l'integrità del frutto colto al punto ottimale d'invaiatura.": {"en": "to the mill takes only a few hours: Lorenzo personally oversees transport and the prompt start of milling. This prevents oxidation and fermentation, preserving the integrity of olives picked at the ideal stage of ripening.", "de": "zur Ölmühle dauert nur wenige Stunden: Lorenzo begleitet den Transport und den raschen Beginn der Verarbeitung persönlich. So werden Oxidation und Gärung vermieden und die Eigenschaften der optimal gereiften Oliven bewahrt."}, "Ciclo Continuo a Freddo": {"en": "Continuous Cold Extraction", "de": "Kontinuierliche Kaltextraktion"}, "Gramolatura e separazione a temperatura rigidamente controllata sotto i 24°C, al riparo dal contatto con l'aria, per sigillare profumi e fragranza.": {"en": "Malaxation and separation at a strictly controlled temperature below 24°C, protected from contact with air to preserve fragrance and aroma.", "de": "Kneten und Trennen bei streng kontrollierten Temperaturen unter 24 °C und geschützt vor Luftkontakt, um Duft und Aroma zu bewahren."}, "Custodia dei Polifenoli": {"en": "Preserving Polyphenols", "de": "Schutz der Polyphenole"}, "Una tecnologia di frangitura millimetrica che tutela i potenti antiossidanti naturali, regalando quel vivace e nobile pizzicore tipico dell'olio fiorentino.": {"en": "Precision milling protects powerful natural antioxidants, preserving the lively, refined peppery finish typical of Florentine olive oil.", "de": "Präzise Verarbeitung schützt die natürlichen Antioxidantien und bewahrt die lebhafte, feine Schärfe, die florentinisches Olivenöl auszeichnet."}, "Maestri Frantoiani a Firenze": {"en": "Master Olive Millers in Florence", "de": "Erfahrene Ölmüller in Florenz"}, "Polo d'eccellenza e punto di riferimento per l'olivicoltura di qualità sulle colline fiorentine.": {"en": "A centre of excellence and a benchmark for quality olive growing in the Florentine hills.", "de": "Ein Kompetenzzentrum und Bezugspunkt für hochwertigen Olivenanbau in den florentinischen Hügeln."}, "Garanzia di filiera corta, tecnologia d'estrazione all'avanguardia e rispetto rigoroso dell'oliva toscana.": {"en": "A short supply chain, advanced extraction technology and careful respect for Tuscan olives.", "de": "Kurze Wege, moderne Extraktionstechnik und ein sorgfältiger Umgang mit toskanischen Oliven."}, "Molitura tempestiva post-raccolta": {"en": "Prompt milling after harvest", "de": "Schnelle Verarbeitung nach der Ernte"}, "Estrazione meccanica a freddo (< 24°C)": {"en": "Mechanical cold extraction (< 24°C)", "de": "Mechanische Kaltextraktion (< 24 °C)"}, "Presenza attiva di Lorenzo Gori in sala macchine": {"en": "Lorenzo Gori personally oversees processing", "de": "Persönliche Begleitung der Verarbeitung durch Lorenzo Gori"}, "Massima limpidezza e profilo sensoriale intatto": {"en": "Outstanding clarity and preserved flavour", "de": "Höchste Klarheit und bewahrtes Aromaprofil"}, "Varietà Autoctone Toscane": {"en": "Native Tuscan Varieties", "de": "Einheimische toskanische Sorten"}, "Le 4 Cultivar della Tenuta": {"en": "The Estate’s 4 Olive Varieties", "de": "Die 4 Olivensorten des Landguts"}, "\"L'Oliveta è composta da un 60% di piante di Frantoio, un 20% di Leccino, un 16% di Moraiolo e un 4% di Pendolino, raccolte al giusto grado di maturazione e lavorate con cura.\"": {"en": "“Our olive grove consists of 60% Frantoio, 20% Leccino, 16% Moraiolo and 4% Pendolino, harvested at the right stage of ripeness and carefully processed.”", "de": "„Unser Olivenhain besteht zu 60 % aus Frantoio, zu 20 % aus Leccino, zu 16 % aus Moraiolo und zu 4 % aus Pendolino. Die Oliven werden im richtigen Reifestadium geerntet und sorgfältig verarbeitet.“"}, "Questa composizione, selezionata e accudita da Lorenzo Gori fin dal 1986, crea un equilibrio perfetto tra intensità aromatica, struttura polifenolica e morbidezza al palato.": {"en": "Selected and cared for by Lorenzo Gori since 1986, this blend balances aromatic intensity, polyphenol structure and a smooth mouthfeel.", "de": "Diese von Lorenzo Gori seit 1986 ausgewählte und gepflegte Zusammensetzung schafft ein Gleichgewicht zwischen intensiven Aromen, Polyphenolen und einem weichen Mundgefühl."}, "L'Anima del Blend": {"en": "The Soul of the Blend", "de": "Die Seele der Mischung"}, "La cultivar sovrana della tradizione toscana. Pianta vigorosa a rami allungati, produce drupe ricche di clorofille e sostanze aromatiche.": {"en": "The leading variety in Tuscan tradition. A vigorous tree with long branches, producing olives rich in chlorophyll and aromatic compounds.", "de": "Die prägende Sorte der toskanischen Tradition. Ein kräftiger Baum mit langen Zweigen und Oliven, die reich an Chlorophyll und Aromastoffen sind."}, "Profilo:": {"en": "Profile:", "de": "Profil:"}, "Carciofo fresco, erba falciata, mandorla verde.": {"en": "Fresh artichoke, cut grass, green almond.", "de": "Frische Artischocke, geschnittenes Gras, grüne Mandel."}, "In bocca:": {"en": "On the palate:", "de": "Am Gaumen:"}, "Nota amara marcata e tipico pizzicore vivace.": {"en": "Pronounced bitterness and a lively peppery finish.", "de": "Ausgeprägte Bitternoten und eine lebhafte Schärfe."}, "Fruttato verde intenso": {"en": "Intense green fruitiness", "de": "Intensive grüne Fruchtigkeit"}, "L'Armonia": {"en": "Harmony", "de": "Harmonie"}, "Tra le più antiche varietà documentate in Toscana. Chioma folta e rami flessuosi, vanta una precoce invaiatura che regala dolcezza e velluto.": {"en": "One of Tuscany’s oldest documented varieties. Its dense canopy and supple branches yield early-ripening olives with a sweet, velvety character.", "de": "Eine der ältesten dokumentierten Sorten der Toskana. Die dichte Krone und biegsamen Zweige tragen früh reifende Oliven mit mildem, samtigem Charakter."}, "Fruttato leggero, note di lattuga e mandorla dolce.": {"en": "Light fruitiness, hints of lettuce and sweet almond.", "de": "Leichte Fruchtigkeit, Noten von Blattsalat und süßer Mandel."}, "Funzione:": {"en": "Function:", "de": "Funktion:"}, "Rende il blend rotondo, gentile ed equilibrato.": {"en": "Makes the blend rounded, gentle and balanced.", "de": "Verleiht der Mischung Rundheit, Milde und Ausgewogenheit."}, "Morbido ed elegante": {"en": "Smooth and elegant", "de": "Weich und elegant"}, "Forza & Longevità": {"en": "Strength & Longevity", "de": "Kraft & Beständigkeit"}, "Cultivar rustica e tenace, adora i costoni sassosi di Marignolle. Drupa piccola e sferica, è un autentico scrigno di polifenoli antiossidanti naturali.": {"en": "A hardy, resilient variety that thrives on Marignolle’s stony slopes. Its small, round olives are rich in natural antioxidant polyphenols.", "de": "Eine robuste, widerstandsfähige Sorte, die auf den steinigen Hängen von Marignolle gedeiht. Ihre kleinen, runden Oliven sind reich an natürlichen antioxidativen Polyphenolen."}, "Erbe officinali, cardo di campo, sentori balsamici.": {"en": "Herbs, wild thistle, balsamic notes.", "de": "Kräuter, wilde Distel, balsamische Noten."}, "Valore:": {"en": "Value:", "de": "Eigenschaft:"}, "Dona struttura, corpo e straordinaria stabilità nel tempo.": {"en": "Adds structure, body and exceptional stability over time.", "de": "Verleiht Struktur, Körper und außergewöhnliche Haltbarkeit."}, "Amaro fine e polifenolico": {"en": "Refined bitterness, rich in polyphenols", "de": "Feine Bitterkeit, reich an Polyphenolen"}, "Il Fecondatore": {"en": "The Pollinator", "de": "Der Bestäuber"}, "Riconoscibile per la caratteristica chioma pendula (\"a piangente\"). È il custode indispensabile della fioritura di primavera e dell'impollinazione dell'intera tenuta.": {"en": "Recognisable by its distinctive drooping canopy. Essential for spring flowering and pollination throughout the estate.", "de": "Erkennbar an der charakteristischen hängenden Krone. Diese Sorte ist für die Frühlingsblüte und Bestäubung auf dem gesamten Landgut unverzichtbar."}, "Mandorlato fresco, sfumature floreali sottili.": {"en": "Fresh almond, subtle floral notes.", "de": "Frische Mandel, zarte blumige Noten."}, "Ruolo:": {"en": "Role:", "de": "Rolle:"}, "Armonizza il retrogusto con grazia aristocratica.": {"en": "Harmonises the finish with delicate elegance.", "de": "Harmonisiert den Nachgeschmack mit feiner Eleganz."}, "Bouquet floreale": {"en": "Floral bouquet", "de": "Blumiges Bouquet"}, "Trasparenza & Purezza": {"en": "Transparency & Purity", "de": "Transparenz & Reinheit"}, "Disciplinare & Dichiarazione Nutrizionale": {"en": "Production Standards & Nutrition Declaration", "de": "Herstellungsstandards & Nährwertdeklaration"}, "Tutti i dati analitici del nostro Olio Extravergine di Oliva, lavorato all'origine nel pieno rispetto dei ritmi della natura toscana.": {"en": "All the analytical details of our extra virgin olive oil, processed on the estate in harmony with the rhythms of Tuscan nature.", "de": "Alle analytischen Angaben zu unserem nativen Olivenöl extra, das am Ursprungsort im Einklang mit den Rhythmen der toskanischen Natur hergestellt wird."}, "Standard di Raccolta & Frangitura": {"en": "Harvesting & Extraction Standards", "de": "Ernte- & Verarbeitungsstandards"}, "100% ITALIANO": {"en": "100% ITALIAN", "de": "100 % ITALIENISCH"}, "Denominazione Merceologica": {"en": "Product Category", "de": "Verkehrsbezeichnung"}, "OLIO EXTRAVERGINE DI OLIVA": {"en": "EXTRA VIRGIN OLIVE OIL", "de": "NATIVES OLIVENÖL EXTRA"}, "\"Olio d'oliva di categoria superiore ottenuto direttamente dalle olive e unicamente mediante procedimenti meccanici.\"": {"en": "“Superior category olive oil obtained directly from olives and solely by mechanical means.”", "de": "„Olivenöl der höchsten Güteklasse – direkt aus Oliven ausschließlich mit mechanischen Verfahren gewonnen.“"}, "Origine Terroir": {"en": "Origin & Terroir", "de": "Herkunft & Terroir"}, "Colline di Firenze (FI)": {"en": "Hills of Florence (FI)", "de": "Hügel von Florenz (FI)"}, "Metodo di Frangitura": {"en": "Extraction Method", "de": "Gewinnungsverfahren"}, "Spremitura a Freddo": {"en": "Cold Extraction", "de": "Kaltextraktion"}, "Temperatura controllata < 24°C": {"en": "Controlled temperature < 24°C", "de": "Kontrollierte Temperatur < 24 °C"}, "Conservazione Naturale": {"en": "Storage", "de": "Lagerung"}, "Conservare al riparo dalla luce e da fonti dirette di calore per preservare inalterati i polifenoli, la fragranza e gli aromi dell'oliva appena franta. Richiudere sempre accuratamente dopo l'uso.": {"en": "Store away from light and direct heat to preserve the polyphenols, fragrance and aromas of freshly milled olives. Always close carefully after use.", "de": "Vor Licht und direkter Wärme geschützt lagern, um Polyphenole, Duft und Aromen frisch verarbeiteter Oliven zu bewahren. Nach Gebrauch stets sorgfältig verschließen."}, "Reg. UE 1169/2011": {"en": "EU Regulation 1169/2011", "de": "EU-Verordnung 1169/2011"}, "Prodotto e confezionato all'origine da:": {"en": "Produced and bottled at origin by:", "de": "Am Ursprungsort hergestellt und abgefüllt von:"}, "Tenuta di Marignolle, Firenze (FI) – Italia": {"en": "Marignolle Estate, Florence (FI) — Italy", "de": "Landgut Marignolle, Florenz (FI) – Italien"}, "Valori medi per 100 ml di prodotto": {"en": "Average values per 100 ml", "de": "Durchschnittliche Nährwerte je 100 ml"}, "Energia": {"en": "Energy", "de": "Brennwert"}, "Grassi totali": {"en": "Total fat", "de": "Fett"}, "- di cui acidi grassi saturi": {"en": "- of which saturates", "de": "– davon gesättigte Fettsäuren"}, "Carboidrati / di cui zuccheri": {"en": "Carbohydrate / of which sugars", "de": "Kohlenhydrate / davon Zucker"}, "Proteine": {"en": "Protein", "de": "Eiweiß"}, "Sale": {"en": "Salt", "de": "Salz"}, "Terroir & Purezza": {"en": "Terroir & Purity", "de": "Terroir & Reinheit"}, "Raccolto a mano nelle Colline di Firenze": {"en": "Hand-picked in the hills of Florence", "de": "Von Hand in den Hügeln von Florenz geerntet"}, "Molitura Artigianale": {"en": "Artisan Milling", "de": "Handwerkliche Verarbeitung"}, "Frantoio Il Mandorlo (Firenze)": {"en": "Il Mandorlo Olive Mill (Florence)", "de": "Ölmühle Il Mandorlo (Florenz)"}, "Selezione Artigianale di Tenuta": {"en": "Artisan Estate Selection", "de": "Handwerkliche Auswahl des Landguts"}, "\"Fatto con uve Merlot e Cabernet. Prodotto e confezionato a regola d'arte da Lorenzo Gori nella Tenuta di Marignolle (FI).\"": {"en": "“Made from Merlot and Cabernet grapes. Carefully produced and bottled by Lorenzo Gori at the Marignolle Estate, Florence.”", "de": "„Aus Merlot- und Cabernet-Trauben. Von Lorenzo Gori auf dem Landgut Marignolle bei Florenz sorgfältig hergestellt und abgefüllt.“"}, "Accanto ai nostri olivi secolari, i vigneti di Merlot e Cabernet della Tenuta beneficiano del medesimo terreno ricco di galestro e della perfetta insolazione. Da una fermentazione spontanea e da un lento invecchiamento curato personalmente da Lorenzo Gori nasce un aceto nobile, vivo e straordinariamente profumato, ideale per elevare le preparazioni gastronomiche toscane.": {"en": "Alongside our ancient olive trees, the estate’s Merlot and Cabernet vines benefit from the same galestro-rich soil and abundant sunshine. Spontaneous fermentation and slow ageing, personally overseen by Lorenzo Gori, create a refined, lively and wonderfully fragrant vinegar, ideal for Tuscan cuisine.", "de": "Neben unseren alten Olivenbäumen profitieren die Merlot- und Cabernet-Reben des Landguts von denselben Galestro-Böden und der reichen Sonneneinstrahlung. Durch spontane Gärung und langsame Reifung unter Lorenzo Goris persönlicher Aufsicht entsteht ein edler, lebendiger und besonders duftender Essig – ideal für die toskanische Küche."}, "Uve Selezionate": {"en": "Selected Grapes", "de": "Ausgewählte Trauben"}, "Vigneti di Marignolle": {"en": "Marignolle Vineyards", "de": "Weinberge von Marignolle"}, "Lavorazione": {"en": "Production", "de": "Herstellung"}, "A Regola d'Arte": {"en": "Expert Craftsmanship", "de": "Fachgerecht und sorgfältig"}, "Cura di Lorenzo Gori": {"en": "Personally cared for by Lorenzo Gori", "de": "Persönliche Betreuung durch Lorenzo Gori"}, "Affinamento": {"en": "Ageing", "de": "Reifung"}, "Lenta Maturazione": {"en": "Slow Maturation", "de": "Langsame Reifung"}, "Tradizione Contadina": {"en": "Farming Tradition", "de": "Bäuerliche Tradition"}, "Cultura Enogastronomica": {"en": "Food & Wine Culture", "de": "Ess- & Weinkultur"}, "Gli Abbinamenti in Tavola": {"en": "Pairings at the Table", "de": "Empfehlungen für die Küche"}, "L'olio e l'aceto di Marignolle nascono per essere celebrati sulla tavola toscana e con la grande cucina italiana.": {"en": "Marignolle’s olive oil and vinegar are made to be enjoyed with Tuscan food and the finest Italian cooking.", "de": "Das Olivenöl und der Essig aus Marignolle bereichern die toskanische Tafel und die feine italienische Küche."}, "A Crudo sul Pane Toscano": {"en": "Drizzled on Tuscan Bread", "de": "Pur auf toskanischem Brot"}, "L'esaltazione pura della nostra spremitura a freddo: pane sciocco leggermente abbrustolito, un cristallo di sale e l'Olio Il Giglio appena versato, per liberare l'aroma verde di carciofo e mandorla.": {"en": "The purest expression of cold extraction: lightly toasted unsalted Tuscan bread, a pinch of salt and freshly poured Il Giglio olive oil release green aromas of artichoke and almond.", "de": "Kaltextraktion in ihrer reinsten Form: leicht geröstetes, ungesalzenes toskanisches Brot, etwas Salz und frisch darübergegebenes Il-Giglio-Olivenöl entfalten grüne Aromen von Artischocke und Mandel."}, "Ideale con: Pane toscano, pinzimonio fresco": {"en": "Perfect with: Tuscan bread, fresh vegetable crudités", "de": "Ideal zu: toskanischem Brot, frischem Gemüse mit Öldip"}, "Bistecca alla Fiorentina": {"en": "Florentine Steak", "de": "Bistecca alla Fiorentina"}, "La carne chianina appena tolta dai carboni ardenti esige un filo d'olio con corpo, vivacità e una persistenza piccante. La presenza preponderante del Frantoio e Moraiolo regala una perfetta armonia balsamica.": {"en": "Chianina beef fresh from the grill calls for a drizzle of full-bodied oil with a lively, lasting peppery finish. Frantoio and Moraiolo bring a beautifully balanced balsamic character.", "de": "Frisch gegrilltes Chianina-Rind verlangt nach einem gehaltvollen Öl mit lebhafter, anhaltender Schärfe. Die Sorten Frantoio und Moraiolo sorgen für ein harmonisches balsamisches Profil."}, "Ideale con: Carni alla brace, ribollita, zuppe di legumi": {"en": "Perfect with: grilled meats, ribollita, bean soups", "de": "Ideal zu: gegrilltem Fleisch, Ribollita, Hülsenfruchtsuppen"}, "Vinaigrette d'Autore": {"en": "Signature Vinaigrette", "de": "Feine Vinaigrette"}, "Unione naturale tra l'Olio EVO e l'Aceto di Merlot & Cabernet Il Giglio: emulsionati insieme con tre parti d'olio e una di aceto, donano fragranza e nobiltà a misticanze campestri e formaggi freschi.": {"en": "A natural pairing of Il Giglio extra virgin olive oil and Merlot & Cabernet vinegar: whisk three parts oil with one part vinegar for a fragrant dressing for mixed leaves and fresh cheeses.", "de": "Die natürliche Verbindung von nativem Olivenöl extra und Merlot-&-Cabernet-Essig von Il Giglio: Drei Teile Öl mit einem Teil Essig verquirlen und damit Blattsalate und frischen Käse verfeinern."}, "Ideale con: Insalate nobili, carni bianche, marinature": {"en": "Perfect with: fine salads, poultry, marinades", "de": "Ideal zu: feinen Salaten, hellem Fleisch, Marinaden"}, "Relazione Diretta con il Produttore": {"en": "Direct Contact with the Producer", "de": "Direkter Kontakt zum Erzeuger"}, "Contatti & Tenuta": {"en": "Contact & Estate", "de": "Kontakt & Landgut"}, "Per informazioni sulle annate di produzione, prenotazione bottiglie di Olio Extravergine e Aceto di Tenuta, o per fissare un incontro a Marignolle.": {"en": "For information on harvest years, orders for extra virgin olive oil and estate vinegar, or to arrange a visit to Marignolle.", "de": "Für Informationen zu Erntejahrgängen, Bestellungen von nativem Olivenöl extra und Essig oder zur Vereinbarung eines Besuchs in Marignolle."}, "Azienda Agricola Il Giglio": {"en": "Il Giglio Farm", "de": "Landgut Il Giglio"}, "Produttore e custode dell'Oliveta di Marignolle sulle colline fiorentine.": {"en": "Producer and caretaker of the Marignolle olive grove in the hills of Florence.", "de": "Erzeuger und Hüter des Olivenhains Marignolle in den Hügeln von Florenz."}, "Tenuta di Marignolle • Firenze": {"en": "Marignolle Estate • Florence", "de": "Landgut Marignolle • Florenz"}, "Cellulare & WhatsApp": {"en": "Mobile & WhatsApp", "de": "Mobiltelefon & WhatsApp"}, "Chiama ora": {"en": "Call now", "de": "Jetzt anrufen"}, "Posta Elettronica": {"en": "Email", "de": "E-Mail"}, "Invia messaggio": {"en": "Send a message", "de": "Nachricht senden"}, "\"Dal 1986, l'amore per l'olivo e la presenza costante in ogni fase della lavorazione danno vita a un olio che custodisce l'anima più autentica delle colline di Firenze.\"": {"en": "“Since 1986, love for olive trees and personal care at every stage have created an oil that preserves the authentic soul of Florence’s hills.”", "de": "„Seit 1986 entstehen aus der Liebe zum Olivenbaum und der persönlichen Sorgfalt in jeder Arbeitsphase Öle, die die Seele der florentinischen Hügel bewahren.“"}, "Lorenzo Gori • Tenuta di Marignolle, Firenze": {"en": "Lorenzo Gori • Marignolle Estate, Florence", "de": "Lorenzo Gori • Landgut Marignolle, Florenz"}, "FIRENZE • MARIGNOLLE": {"en": "FLORENCE • MARIGNOLLE", "de": "FLORENZ • MARIGNOLLE"}, "Azienda Agricola Il Giglio di Lorenzo Gori. Olio extravergine di oliva d'eccellenza prodotto dal 1986 con partecipazione diretta dalla raccolta all'imbottigliamento nella Tenuta di Marignolle.": {"en": "Il Giglio Farm, Lorenzo Gori. Exceptional extra virgin olive oil since 1986, personally overseen from harvest to bottling at the Marignolle Estate.", "de": "Landgut Il Giglio von Lorenzo Gori. Natives Olivenöl extra von höchster Qualität seit 1986, auf dem Landgut Marignolle persönlich von der Ernte bis zur Abfüllung begleitet."}, "Lavorazione Artigianale": {"en": "Artisan Production", "de": "Handwerkliche Herstellung"}, "• Olio d'eccellenza prodotto dal 1986": {"en": "• Exceptional olive oil since 1986", "de": "• Olivenöl von höchster Qualität seit 1986"}, "• Raccolta a mano all'invaiatura": {"en": "• Hand-picked at the start of ripening", "de": "• Von Hand zu Beginn der Reife geerntet"}, "• Frangitura immediata a freddo (< 24°C)": {"en": "• Immediate cold extraction (< 24°C)", "de": "• Sofortige Kaltextraktion (< 24 °C)"}, "• Presenza diretta di Lorenzo Gori in ogni fase": {"en": "• Lorenzo Gori personally oversees every stage", "de": "• Persönliche Begleitung jeder Phase durch Lorenzo Gori"}, "• Confezionamento all'origine a Marignolle": {"en": "• Bottled at origin in Marignolle", "de": "• Am Ursprungsort in Marignolle abgefüllt"}, "Tenuta": {"en": "Estate", "de": "Landgut"}, "© Azienda Agricola Il Giglio di Lorenzo Gori • Tenuta di Marignolle, Firenze.": {"en": "© Il Giglio Farm, Lorenzo Gori • Marignolle Estate, Florence.", "de": "© Landgut Il Giglio von Lorenzo Gori • Tenuta di Marignolle, Florenz."}, "Olio d'Eccellenza dal 1986": {"en": "Exceptional Olive Oil Since 1986", "de": "Olivenöl von höchster Qualität seit 1986"}, "Certificato del premio": {"en": "Award certificate", "de": "Auszeichnungsurkunde"}, "Chiudi ✕": {"en": "Close ✕", "de": "Schließen ✕"}, "Apri la foto a dimensione intera": {"en": "Open the full-size certificate", "de": "Urkunde in voller Größe öffnen"}};
+ const normalise = text => text.replace(/\s+/g,' ').trim();
+ const originals = [];
+ const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+ let node;
+ while (node = walker.nextNode()) {
+   if (node.parentElement.closest('script,style,svg,.language-bar')) continue;
+   const key = normalise(node.nodeValue);
+   if (dictionary[key]) originals.push({node, text:node.nodeValue, key});
+ }
+ const titleOriginal = document.title;
+ const descriptions = {
+  it:'Olio extravergine di oliva e aceto artigianale della Tenuta di Marignolle, Firenze. Scopri Il Giglio, Lorenzo Gori e i premi dal 2021 al 2026.',
+  en:'Extra virgin olive oil and artisan vinegar from the Marignolle Estate, Florence. Discover Il Giglio, Lorenzo Gori and our awards from 2021 to 2026.',
+  de:'Natives Olivenöl extra und handwerklicher Essig vom Landgut Marignolle bei Florenz. Entdecken Sie Il Giglio, Lorenzo Gori und unsere Auszeichnungen von 2021 bis 2026.'
+ };
+ const labels = {
+  it:{menu:'Apri Menu di Navigazione',awards:'Scopri tutti i premi dal 2026 al 2021',certificate:'Certificato del premio',enlarge:'Ingrandisci il certificato',photo:'Certificato Frantoio Il Mandorlo — Il Giglio'},
+  en:{menu:'Open navigation menu',awards:'Discover all awards from 2026 to 2021',certificate:'Award certificate',enlarge:'Enlarge the certificate',photo:'Frantoio Il Mandorlo certificate — Il Giglio'},
+  de:{menu:'Navigationsmenü öffnen',awards:'Alle Auszeichnungen von 2026 bis 2021 ansehen',certificate:'Auszeichnungsurkunde',enlarge:'Urkunde vergrößern',photo:'Urkunde Frantoio Il Mandorlo — Il Giglio'}
+ };
+ window.siteLanguage = 'it';
+ function applyLanguage(lang) {
+  if (!['it','en','de'].includes(lang)) lang='it';
+  window.siteLanguage=lang; document.documentElement.lang=lang;
+  document.querySelectorAll('a[href]').forEach(link=>{
+    const href=link.getAttribute('href');
+    if(!/^(index|premi)\.html(?:[?#]|$)/.test(href))return;
+    const target=new URL(href,location.href);target.searchParams.set('lang',lang);
+    link.setAttribute('href',target.pathname.split('/').pop()+target.search+target.hash);
+  });
+  for (const item of originals) {
+   const value=lang==='it'?item.key:dictionary[item.key][lang];
+   const leading=item.text.match(/^\s*/)[0], trailing=item.text.match(/\s*$/)[0];
+   item.node.nodeValue=lang==='it'?item.text:leading+value+trailing;
+  }
+  document.title=lang==='it'?titleOriginal:dictionary[titleOriginal][lang];
+  let meta=document.querySelector('meta[name="description"]');
+  if(!meta){meta=document.createElement('meta');meta.name='description';document.head.append(meta)}
+  meta.content=descriptions[lang];
+  document.querySelectorAll('[data-lang]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.lang===lang)));
+  const menu=document.querySelector('#mobileMenuBtn'); if(menu)menu.setAttribute('aria-label',labels[lang].menu);
+  document.querySelector('.awards-nav').setAttribute('aria-label',labels[lang].awards);
+  document.querySelectorAll('.award-certificate .certificate-link').forEach(link=>{
+    link.setAttribute('aria-label',labels[lang].enlarge+' '+link.dataset.year);
+    link.querySelector('img').alt=labels[lang].photo+' '+link.dataset.year;
+  });
+  const dialogImage=document.getElementById('certificate-image');
+  if(dialogImage.dataset.year){document.getElementById('certificate-title').textContent=labels[lang].certificate+' '+dialogImage.dataset.year;dialogImage.alt=labels[lang].photo+' '+dialogImage.dataset.year}
+  try{localStorage.setItem('ilgiglio-language',lang)}catch(e){}
+  const url=new URL(location.href);url.searchParams.set('lang',lang);history.replaceState(null,'',url);
+ }
+ document.querySelectorAll('[data-lang]').forEach(button=>button.addEventListener('click',()=>applyLanguage(button.dataset.lang)));
+ document.querySelectorAll('.certificate-link').forEach(link=>link.addEventListener('click',()=>{
+  const year=link.dataset.year,lang=window.siteLanguage;
+  const img=document.getElementById('certificate-image');img.dataset.year=year;img.alt=labels[lang].photo+' '+year;
+  document.getElementById('certificate-title').textContent=labels[lang].certificate+' '+year;
+ }));
+ let initial=new URLSearchParams(location.search).get('lang');
+ if(!initial){try{initial=localStorage.getItem('ilgiglio-language')}catch(e){}}
+ applyLanguage(initial||'it');
+})();
+</script>
+
+</body>
+</html>
